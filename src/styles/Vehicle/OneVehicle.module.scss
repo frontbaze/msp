@@ -1,0 +1,99 @@
+@import "../variables";
+.OneVehicle{
+  color: white;
+  padding-top: 50px;
+  &-title{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  &__item{
+    display: flex;
+    //justify-content: space-between;
+    gap: 100px;
+    &-graphics{
+      width: 500px;
+      &-image{
+        width: 500px;
+        height: 500px;
+        border: 2px solid white;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        margin-bottom: 20px;
+      }
+      &-images{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6.5px;
+        &-item{
+          width: 120px;
+          height: 120px;
+          border: 2px solid white;
+          background-size: cover;
+          cursor: pointer;
+          transition: all 100ms linear;
+        }
+        &-item:hover{
+          border: 2px solid $light-blue;
+          transform: scale(1.1);
+        }
+      }
+    }
+    &-info{
+      &-buttons{
+        margin-top: 50px;
+        display: flex;
+        gap: 50px;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .OneVehicle{
+    &__item{
+      flex-direction: column;
+      gap: 20px;
+      &-graphics{
+        width: unset;
+      }
+    }
+  }
+}
+@media (max-width: 545px) {
+  .OneVehicle{
+    &__item{
+      &-graphics{
+        &-image{
+          height: calc(250px + (500  - 250) * ((100vw - 320px) / (545 - 320)));
+          width: calc(250px + (500  - 250) * ((100vw - 320px) / (545 - 320)));
+        }
+        &-images{
+          width: calc(250px + (500  - 250) * ((100vw - 320px) / (545 - 320)));
+          &-item{
+            height: calc(55px + (120  - 55) * ((100vw - 320px) / (545 - 320)));
+            width: calc(55px + (120  - 55) * ((100vw - 320px) / (545 - 320)));
+          }
+        }
+      }
+      &-info{
+        &-buttons{
+          gap: 15px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 415px) {
+  .OneVehicle{
+    &__item {
+      &-info {
+        &-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+        }
+      }
+    }
+  }
+}

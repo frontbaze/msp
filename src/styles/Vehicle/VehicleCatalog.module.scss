@@ -1,0 +1,106 @@
+@import "../variables";
+.VehicleCatalog{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__item{
+    display: flex;
+    gap: 40px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 200ms linear;
+    padding: 10px;
+    border: 1px solid transparent;
+    &-image{
+      min-width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: 50% 50%;
+      border-radius: 12px;
+    }
+    &-info{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &-name{
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+      }
+      &-description{
+        font-size: 18px;
+        color: white;
+        margin: 10px 0;
+      }
+      &-buttons{
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+  &__item:hover{
+    border: 1px solid white;
+  }
+}
+.SwitchCategory{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  &-item, &-item-active{
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 200ms linear;
+    white-space: nowrap;
+  }
+  &-item:hover{
+    background-color: $gray;
+  }
+  &-item-active{
+    background-color: #fff;
+    color: black;
+  }
+}
+@media (max-width: 650px) {
+  .SwitchCategory{
+    overflow-x: scroll;
+    padding-bottom: 15px;
+    white-space: nowrap;
+  }
+  .VehicleCatalog{
+    &__item{
+      gap: 15px;
+      &-info{
+        &-buttons{
+          display: none;
+        }
+      }
+    }
+  }
+  .SwitchCategory::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 740px) {
+  .VehicleCatalog{
+    &__item{
+      align-items: center;
+      &-image{
+        min-width: calc(75px + (150  - 75) * ((100vw - 320px) / (740 - 320)));
+        height: calc(75px + (150  - 75) * ((100vw - 320px) / (740 - 320)));
+      }
+      &-info{
+        &-name{
+          font-weight: unset;
+          font-size: calc(16px + (24  - 16) * ((100vw - 320px) / (740 - 320)));
+        }
+        &-description{
+          display: none;
+        }
+      }
+    }
+  }
+}

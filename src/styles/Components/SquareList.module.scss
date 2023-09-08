@@ -1,0 +1,51 @@
+.SquareList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  &__item{
+    width: 400px;
+    flex: 1 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    &-image{
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      background-size: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    &-text{
+      color: white;
+      font-size: 24px;
+      padding-top: 15px;
+      text-align: center;
+    }
+  }
+  &__item:hover{
+    background-color: rgba(1, 1, 1, 0.29);
+  }
+}
+@media (max-width: 843px) {
+  .SquareList{
+    &__item{
+      width: calc(150px + (250  - 150) * ((100vw - 320px) / (843 - 320)));
+      height: max-content;
+      &-image{
+        width: calc(100px + (150  - 100) * ((100vw - 320px) / (843 - 320)));
+        height: calc(100px + (150  - 100) * ((100vw - 320px) / (843 - 320)));
+      }
+      &-text{
+        padding-top: 5px;
+        font-size: calc(16px + (18  - 16) * ((100vw - 320px) / (843 - 320)));
+      }
+    }
+  }
+}

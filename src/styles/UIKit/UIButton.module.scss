@@ -1,0 +1,41 @@
+@import "../variables";
+.UIButton{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: $white;
+  font-size: 24px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 200ms linear;
+  white-space: nowrap;
+}
+.outline{
+  padding: 5px 50px;
+  border: 1px solid $white;
+  border-radius: 6px;
+}
+.outline:hover{
+  background-color: #fff;
+  color: #000;
+}
+.outline:focus, .outline:active{
+  background-color: $gray;
+  transition: none;
+}
+.text-small{
+  font-size: 18px;
+  border-bottom: 1px solid white;
+}
+.text:hover{
+  color: $gray;
+}
+.text:focus, .text:active{
+  color: $light-blue;
+  transition: none;
+}
+@media (max-width: 1650px) {
+  .UIButton{
+    font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1650 - 320)));
+  }
+}

@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #63666c;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #ffffff;
+}
+
+.UIInput{
+  position: relative;
+  & > * {
+    font-size: 16px;
+    padding: 1.2rem 0;
+    font-weight: 500;
+    text-indent: 16px;
+  }
+  input, textarea{
+    outline: none;
+    background-color: #fff;
+    border-radius: 6px;
+    border: transparent;
+    font-weight: 500;
+    color: black;
+    height: 1rem;
+  }
+  &-placeholder{
+    color: gray;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+}
+.UIInput input:valid + .UIInput-placeholder,.UIInput textarea:valid + .UIInput-placeholder  {
+  display: none;
+}
+div[id^='medium'], div[id*='medium'], div[id*='news_body_ad_title']{
+  display: none !important;
+}

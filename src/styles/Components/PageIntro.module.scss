@@ -1,0 +1,91 @@
+@import "../variables";
+.PageIntro{
+  height: 44vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  &-image{
+    width: 100vw;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  p{
+    margin-top: -100px;
+    margin-bottom: 50px;
+    font-size: 44px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-family: 'Play', sans-serif;
+    text-shadow: 1px 1px 1px black;
+  }
+  &__advantages {
+    padding-top: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+    &-item {
+      width: 400px;
+      &-icon {
+        font-size: 32px;
+      }
+      &-title {
+        font-size: 22px;
+        margin: 10px 0;
+      }
+      &-text {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .PageIntro{
+    &__advantages {
+      &-item {
+        width: unset;
+      }
+    }
+  }
+}
+@media (max-width: 760px) {
+  .PageIntro{
+    p{
+      font-size: calc(26px + (44  - 26) * ((100vw - 320px) / (760 - 320)));
+      margin-bottom: 0;
+    }
+    &__advantages {
+      &-item {
+        &-title{
+          font-size: 16px;
+          min-width: calc(100px + (200  - 100) * ((100vw - 320px) / (760 - 320)));
+        }
+        &-text{
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 560px) {
+  .PageIntro{
+    &__advantages {
+      padding: 0 0 20px 0;
+      flex-direction: column;
+      gap: 10px;
+      font-weight: bold;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &-icon{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

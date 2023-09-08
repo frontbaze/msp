@@ -1,0 +1,68 @@
+@import '../variables';
+.NavBar{
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: $dark-blue;
+  box-shadow: 0 1px 6px 0 rgb(0 0 0);
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 10px 0;
+  border-radius: 0 0 12px 12px;
+  &__logo{
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &__nav{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    &-item{
+      cursor: pointer;
+      font-weight: bold;
+    }
+    &-item:hover{
+      color: $gray;
+    }
+  }
+  &__phone{
+    padding-right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  &__bars{
+    color: white;
+    cursor: pointer;
+  }
+}
+.MobileNav{
+  position: fixed;
+  background-color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 70px;
+  color: $dark-blue;
+  padding-bottom: 20px;
+  border-radius: 12px;
+  z-index: 99998;
+  box-shadow: 0 1px 6px 0 rgb(0 0 0);
+  .NavBar__nav{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    //justify-content: center;
+    //align-items: center;
+  }
+}
+//@media (max-width: 600px) {
+//  .NavBar {
+//   & > * {
+//     font-size: 12px;
+//   }
+//  }
+//}

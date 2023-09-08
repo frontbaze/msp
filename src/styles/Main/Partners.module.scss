@@ -1,0 +1,32 @@
+@import "../variables";
+.Partners{
+  margin-top: 50px;
+  &-title{
+    font-size: 36px;
+    color: $white;
+    font-weight: bold;
+  }
+  &-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 20px 0 100px 0;
+  }
+}
+@media (max-width: 1660px) {
+  .Partners{
+    margin-top: calc(20px + (50  - 20) * ((100vw - 320px) / (1660 - 320)));
+    &-title{
+      font-size: calc(22px + (36  - 22) * ((100vw - 320px) / (1660 - 320)));
+    }
+    &-items{
+      gap: calc(5px + (50  - 5) * ((100vw - 320px) / (1660 - 320)));
+      padding-bottom: calc(20px + (100  - 20) * ((100vw - 320px) / (1660 - 320)));
+      img{
+        width: calc(50px + (250  - 50) * ((100vw - 320px) / (1660 - 320)));
+      }
+    }
+  }
+}

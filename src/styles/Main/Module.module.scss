@@ -1,0 +1,117 @@
+@import "../variables";
+.Module{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 150px;
+  &__content{
+    &-image{
+      position: relative;
+      &-title{
+        font-size: 128px;
+        font-weight: 800;
+        color: $white;
+        position: sticky;
+        left:0;
+        top: 5%;
+        width: 800px;
+        z-index: 9;
+        text-shadow: 1px 1px 1px black;
+      }
+      &-img{
+        margin-top: -150px;
+      }
+    }
+    &-buttons{
+      display: flex;
+      gap: 50px;
+      justify-content: flex-end;
+      margin: 20px 0 50px 0;
+    }
+  }
+  &__info{
+    &-title{
+      color: $white;
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    &-items{
+      font-size: 24px;
+      color: $white;
+      width: 400px;
+      & > * {
+        margin-bottom: 20px;
+      }
+      .active{
+        font-size: 34px;
+      }
+    }
+  }
+}
+.reversed{
+  flex-direction: row-reverse;
+  .Module__content-buttons{
+    justify-content: start;
+  }
+}
+
+@media(max-width: 1530px) {
+  .Module {
+    padding: 100px 0 0 0;
+    &__content {
+      &-image {
+        width: fit-content;
+        &-img{
+          margin-top: 0;
+        }
+        img {
+          width: calc(100px + (800 - 100) * ((100vw - 320px) / (1530 - 320)));
+        }
+        &-title {
+          font-size: calc(42px + (64 - 42) * ((100vw - 320px) / (1530 - 320)));
+          width: calc(100px + (800 - 100) * ((100vw - 320px) / (1530 - 320)));
+          text-shadow: 2px 5px 2px black;
+        }
+      }
+    }
+
+    &__info {
+      img {
+        height: calc(50% + (100 - 50) * ((100vw - 320px) / (1530 - 320)));
+      }
+    }
+  }
+}
+@media(max-width: 1090px){
+  .Module{
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    &__content {
+      &-image {
+        &-title{
+          width: calc(350px + (600 - 350) * ((100vw - 320px) / (1090 - 320)));
+        }
+        img {
+          width: calc(350px + (600 - 350) * ((100vw - 320px) / (1090 - 320)));
+        }
+      }
+    }
+    &__info {
+      img{
+        display: none;
+      }
+      &-title{
+        margin-bottom: 20px;
+      }
+      &-items{
+        & > * {
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

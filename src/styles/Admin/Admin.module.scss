@@ -1,0 +1,68 @@
+.Admin{
+  padding-top: 100px;
+  color: white;
+  min-height: 70vh;
+  &__item{
+    &-title{
+      font-size: 36px;
+    }
+    &-categories{
+      max-height: 300px;
+      overflow-y: scroll;
+      &-item, &-item-active{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        &-image{
+          min-width: 50px;
+          min-height: 50px;
+          background-size: cover;
+        }
+        &-title{
+          font-size: 24px;
+        }
+      }
+      &-item:hover{
+        background-color: rgba(1,1,1,0.5);
+      }
+      &-item-active{
+        background-color: rgba(61, 255, 69, 0.5);
+      }
+      &-form{
+        display: flex;
+        gap: 20px;
+        padding: 20px 0;
+        .file{
+          border-radius: 12px;
+          border: 1px dashed white;
+          width: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          input{
+            width: 0;
+            height: 0;
+          }
+        }
+        .file:hover{
+          background-color: rgba(1,1,1,0.5);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .Admin{
+    &__item {
+      &-categories {
+        &-item, &-item-active {
+          &-title {
+            font-size: calc(16px + (24  - 16) * ((100vw - 320px) / (650 - 320)));
+          }
+        }
+      }
+    }
+  }
+}

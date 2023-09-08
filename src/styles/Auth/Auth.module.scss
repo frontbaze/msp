@@ -1,0 +1,46 @@
+@import "../variables";
+.Auth{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  &__container{
+    //background-color: $dark-blue;
+    border-radius: 12px;
+    padding: 50px;
+    border: 2px solid white;
+    &-title{
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    &-form{
+      &-item{
+        margin-bottom: 20px;
+      }
+      &-button{
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &-action{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      p{
+        font-size: 18px;
+      }
+    }
+  }
+}
+label{
+  display: block;
+}
+.error{
+  padding: 10px 0;
+  color: #d54242;
+  font-weight: 500;
+}

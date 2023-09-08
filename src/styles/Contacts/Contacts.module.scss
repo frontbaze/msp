@@ -1,0 +1,80 @@
+@import "../variables";
+.Contacts{
+  padding-top: 100px;
+  color: white;
+  &__title{
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  &__info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    &-text{
+      display: flex;
+      flex-direction: column;
+      &-title{
+        font-size: 34px;
+        font-weight: bold;
+      }
+      &-subtitle{
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      &-services{
+        &-item{
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+      }
+      &-credentials{
+        max-width: 500px;
+        &-title{
+          font-weight: bold;
+          font-size: 24px;
+          margin: 40px 0 20px 0;
+        }
+        &-item{
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
+    &-logo{
+      width: 500px;
+      height: 500px;
+      border-radius: 15px;
+      background-position: 50% 50%;
+      background-size: 112%;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .Contacts{
+    &__info{
+      &-logo{
+        flex-shrink: 0;
+        height:calc(100px + (200  - 100) * ((100vw - 320px) / (1200 - 320)));
+        width: calc(100px + (200  - 100) * ((100vw - 320px) / (1200 - 320)));
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .Contacts{
+    &__info{
+      flex-direction: column;
+      &-text{
+        order: 2;
+      }
+      &-logo{
+        order: 1;
+      }
+    }
+  }
+}

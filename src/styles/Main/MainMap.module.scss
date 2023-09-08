@@ -1,0 +1,22 @@
+.MainMap{
+  & > * {
+    width: 100% !important;
+    height: 600px !important;
+  }
+}
+:global{
+  .ymaps-2-1-79-copyright__wrap{
+    display: none !important;
+  }
+  .ymaps-2-1-79-map-copyrights-promo{
+    display: none !important;
+  }
+}
+@media(max-width: 1090px){
+  .MainMap{
+    & > * {
+      width: 100% !important;
+      height: 400px !important;
+    }
+  }
+}

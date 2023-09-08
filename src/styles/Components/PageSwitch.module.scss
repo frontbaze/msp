@@ -1,0 +1,26 @@
+@import "../variables";
+.PageSwitch{
+  display: flex;
+  gap: 15px;
+  margin-top: 50px;
+  &__item{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 12px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 100ms linear;
+  }
+  &__item:hover{
+    background-color: $gray;
+  }
+  .active{
+    background-color: white;
+    color: #000;
+  }
+}

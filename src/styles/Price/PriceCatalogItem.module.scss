@@ -1,0 +1,14 @@
+.PriceCatalogItem {
+    min-height: 500px;
+    padding: 20px;
+    .title {
+        font-weight: 500;
+    }
+    .catalogImg {
+        border: 1px solid black;
+        width: 60%;
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+}

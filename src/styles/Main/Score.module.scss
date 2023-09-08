@@ -1,0 +1,48 @@
+@import "../variables";
+.Score{
+  &__table{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    &-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      &-count{
+        color: $white;
+        font-size: 48px;
+      }
+      &-name{
+        color: $gray;
+        font-size: 32px;
+      }
+    }
+  }
+  &__buttons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 0 100px 0;
+  }
+}
+@media (max-width: 1660px) {
+  .Score {
+    &__table {
+      gap: calc(10px + (150 - 10) * ((100vw - 320px) / (1660 - 320)));
+      &-item {
+        width: calc(200px + (400 - 200) * ((100vw - 320px) / (1660 - 320)));
+        &-count {
+          font-size: calc(16px + (48 - 16) * ((100vw - 320px) / (1660 - 320)));
+        }
+        &-name{
+          font-size: calc(12px + (48 - 12) * ((100vw - 320px) / (1660 - 320)));
+        }
+      }
+    }
+    &__buttons{
+      gap: calc(10px + (50 - 10) * ((100vw - 320px) / (1660 - 320)));
+      padding: 50px 0;
+    }
+  }
+}

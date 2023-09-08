@@ -1,0 +1,64 @@
+@import "../variables";
+.Footer-container{
+  width: 100%;
+  background-color: #fff;
+  margin-top: 50px;
+  border-radius: 12px 12px 0 0;
+  padding-top: 10px;
+  color: $dark-blue;
+}
+.Footer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  &__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+  &__column{
+    &-title{
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &-text{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+      max-width: 300px;
+      cursor: pointer;
+      font-weight: 400;
+      transition: all 100ms linear;
+      & > *{
+        flex-shrink: 0;
+      }
+    }
+    &-text:hover{
+      color: $light-blue;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .Footer {
+    flex-direction: column;
+    &__logo{
+      order: 1;
+      margin-top: 25px;
+    }
+    &__column{
+      order: 0;
+      &-text{
+        max-width: none;
+        margin-left: 3%;
+      }
+    }
+  }
+}
