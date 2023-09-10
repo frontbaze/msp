@@ -2,20 +2,32 @@ import React, { useEffect, useMemo, useState } from 'react';
 import PriceSidebarItem from './PriceSidebarItem';
 import classes from '../../styles/Price/PriceSidebar.module.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { fetchCategories } from '../../store/ActionCreators/PriceActionCreators';
+import { fetchCatalogCategories } from '../../store/ActionCreators/PriceActionCreators';
 
 const PriceSidebar = () => {
 	const dispatch = useAppDispatch();
-	const { catalogItems } = useAppSelector((state) => state.priceReducer);
-	const [itemSelected, setItemSelected] = useState({});
+	const { catalogCategories } = useAppSelector((state) => state.priceReducer);
+	const [selectedItem, setSelectedItem] = useState({});
 
 	useEffect(() => {
-		dispatch(fetchCategories());
+		dispatch(fetchCatalogCategories());
 	}, [dispatch]);
 
+	const handleSelect = (item: {}) => {
+		setSelectedItem(item);
+	}
+
 	const itemsList = useMemo(
-		() => catalogItems.map((item) => <PriceSidebarItem key={item.id} item={item} />),
-		[catalogItems]
+		() =>
+			catalogCategories.map((item) => (
+				<PriceSidebarItem
+					key={item.id}
+					onItemSelect={() => handleSelect(item)}
+					selectedItem={selectedItem}
+					item={item}
+				/>
+			)),
+		[catalogCategories, selectedItem]
 	);
 	return (
 		<div className={classes['PriceSidebar']}>

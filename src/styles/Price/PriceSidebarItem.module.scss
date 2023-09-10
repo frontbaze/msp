@@ -1,5 +1,12 @@
-.itemLink {
+.itemLink,
+.active {
+	width: 100%;
 	text-decoration: none;
 	color: inherit;
 	padding: 3px 0;
+	cursor: pointer;
+}
+
+.active {
+    font-weight: 600;
 }

@@ -5,7 +5,7 @@ import { openCallModal, openOfferModal } from '../../store/ActionCreators/ModalA
 import { useAppDispatch } from '../../hooks/redux';
 
 interface PriceProductItemProps {
-	title: string;
+    title: string;
 }
 
 const PriceProductItem = ({ title }: PriceProductItemProps) => {

@@ -1,16 +1,25 @@
 import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
 import classes from '../../styles/Price/PriceSidebarItem.module.scss';
-import { ICatalogItem } from '../../models/BaseItems';
-
+import { ICatalogCategory } from '../../models/BaseItems';
+import { Link } from 'react-scroll';
 
 interface SidebarItemProps {
-	item: ICatalogItem;
+	item: ICatalogCategory;
+	onItemSelect: () => void;
+	selectedItem: {};
 }
 
-const PriceSidebarItem = memo(({ item }: SidebarItemProps) => {
+const PriceSidebarItem = memo(({ item, onItemSelect, selectedItem }: SidebarItemProps) => {
+	const handleClick = () => {
+		onItemSelect();
+	};
 	return (
-		<Link to={`#`} className={classes['itemLink']}>
+		<Link
+			offset={-60}
+			onClick={handleClick}
+			to={String(item.id)}
+			className={item === selectedItem ? classes['active'] : classes['itemLink']}
+		>
 			{item.title}
 		</Link>
 	);

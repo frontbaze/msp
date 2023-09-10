@@ -1,12 +1,13 @@
 .PriceSidebar {
-    width: var(--sidebar-width);    
-    background-color: lightgrey;
-    min-height: 100px;
-    height: 100%;
+	width: var(--sidebar-width);
+	background-color: lightgrey;
+	min-height: 100px;
+	height: 100%;
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    min-width: 120px;
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
 }

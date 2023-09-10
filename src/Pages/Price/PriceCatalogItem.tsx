@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import classes from '../../styles/Price/PriceCatalogItem.module.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { fetchProductItems } from '../../store/ActionCreators/PriceActionCreators';
+import { fetchCatalogProducts } from '../../store/ActionCreators/PriceActionCreators';
 import PriceProductItem from './PriceProductItem';
 
 interface PriceCatalogItemProps {
@@ -12,13 +12,13 @@ interface PriceCatalogItemProps {
 
 const PriceCatalogItem = ({ id, title, img }: PriceCatalogItemProps) => {
     const dispatch = useAppDispatch();
-	const { catalogProductItems } = useAppSelector((state) => state.priceReducer);
+	const { catalogProducts, currentCatalogCategory, page, limit } = useAppSelector((state) => state.priceReducer);
 
 	useEffect(() => {
-		dispatch(fetchProductItems());
-    }, [dispatch]);
+		dispatch(fetchCatalogProducts(currentCatalogCategory, page, limit));
+    }, [currentCatalogCategory, dispatch, limit, page]);
     
-    const categoryItems = catalogProductItems.filter(item => item.categoryId === id)
+    const categoryItems = catalogProducts.filter((item) => item.categoryId === id);
 	return (
 		<div className={classes['PriceCatalogItem']}>
 			<div className={classes['title']}>{title}</div>

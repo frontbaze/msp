@@ -1,14 +1,23 @@
 .PriceCatalogItem {
-    min-height: 500px;
-    padding: 20px;
-    .title {
-        font-weight: 500;
-    }
-    .catalogImg {
-        border: 1px solid black;
-        width: 60%;
-        height: 200px;
-        display: block;
-        margin: 0 auto;
-    }
+	min-height: 300px;
+	padding: 20px;
+	.title {
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	.catalogImg {
+		border: 1px solid black;
+		width: 60%;
+		height: 200px;
+		display: block;
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 550px) {
+		padding: 0;
+	}
+	@media screen and (max-width: 758px) {
+		.catalogImg {
+			width: 100%;
+		}
+	}
 }

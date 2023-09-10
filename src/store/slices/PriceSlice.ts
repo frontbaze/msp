@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICatalogItem, ICatalogProductItem, ICategory, IVehicle, IVehicles } from '../../models/BaseItems';
+import { ICatalogCategory, ICatalogProduct} from '../../models/BaseItems';
 
 interface PriceState {
 	loading: boolean;
@@ -8,35 +8,21 @@ interface PriceState {
 	page: number;
 	pages: number;
 	limit: number;
-	catalogItems: ICatalogItem[];
-	catalogProductItems: ICatalogProductItem[];
-	vehicles: IVehicles;
-	currentCategory: ICategory;
-	vehicle: IVehicle;
+	catalogCategories: ICatalogCategory[];
+	catalogProducts: ICatalogProduct[];
+	currentCatalogCategory: ICatalogCategory;
 }
 
 const initialState: PriceState = {
 	loading: false,
 	error: false,
 	success: false,
-	catalogItems: [],
-	catalogProductItems: [],
-	vehicles: { count: 0, rows: [] },
-	currentCategory: { id: 0, name: '', img: '' },
+	catalogCategories: [],
+	catalogProducts: [],
+	currentCatalogCategory: { id: 0, title: '', img: '' },
 	page: 1,
 	pages: 1,
 	limit: 10,
-	vehicle: {
-		categoryId: 0,
-		createdAt: '',
-		description: '',
-		id: 0,
-		image: '',
-		name: '',
-		price: 0,
-		updatedAt: '',
-		vehicleCategoryId: 0,
-	},
 };
 
 export const priceSlice = createSlice({
@@ -55,32 +41,28 @@ export const priceSlice = createSlice({
 			state.loading = false;
 			state.success = true;
 		},
-		fetchingCategories(state) {
+		fetchingCatalogCategories(state) {
 			state.loading = true;
 		},
-		fetchingCategoriesSuccess(state, action: PayloadAction<ICatalogItem[]>) {
+		fetchingCatalogCategoriesSuccess(state, action: PayloadAction<ICatalogCategory[]>) {
 			state.loading = false;
-			state.catalogItems = action.payload;
+			state.catalogCategories = action.payload;
 		},
-		fetchingCatalogProductItemsSuccess(state, action: PayloadAction<ICatalogProductItem[]>) {
+		fetchingCatalogProductsSuccess(state, action: PayloadAction<ICatalogProduct[]>) {
 			state.loading = false;
-			state.catalogProductItems = action.payload;
+			state.catalogProducts = action.payload;
 		},
-		setCurrentCategory(state, action: PayloadAction<ICategory>) {
+		setCurrentCatalogCategory(state, action: PayloadAction<ICatalogCategory>) {
 			state.loading = false;
-			state.currentCategory = action.payload;
+			state.currentCatalogCategory = action.payload;
 		},
-		setDefaultCategory(state) {
+		setDefaultCatalogCategory(state) {
 			state.loading = false;
-			state.currentCategory = { id: 0, name: '', img: '' };
+			state.currentCatalogCategory = { id: 0, title: '', img: '' };
 		},
-		fetchingVehicleSuccess(state, action: PayloadAction<IVehicles>) {
+		fetchingCatalogProductSuccess(state, action: PayloadAction<ICatalogProduct[]>) {
 			state.loading = false;
-			state.vehicles = action.payload;
-		},
-		fetchingOneVehicleSuccess(state, action: PayloadAction<IVehicle>) {
-			state.loading = false;
-			state.vehicle = action.payload;
+			state.catalogProducts = action.payload;
 		},
 		setPages(state, action: PayloadAction<number>) {
 			state.pages = Math.floor(action.payload / state.limit + 1);

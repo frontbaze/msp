@@ -25,13 +25,13 @@ export interface IReview{
     message: string
 }
 
-export interface ICatalogItem {
+export interface ICatalogCategory {
     id: number;
     title: string;
     img: string;
 }
 
-export interface ICatalogProductItem {
+export interface ICatalogProduct {
     id: number;
     categoryId: number;
 	title: string;
