@@ -1,13 +1,25 @@
 .PriceSidebar {
+	margin-top: 40px;
 	width: var(--sidebar-width);
-	background-color: lightgrey;
+	background-color: #1b699e;
+	color: white;
 	min-height: 100px;
 	height: 100%;
+	border-radius: 5px;
+	font-size: 20px;
+	-webkit-box-shadow: 2px 10px 8px -5px rgba(34, 60, 80, 0.43);
+	-moz-box-shadow: 2px 10px 8px -5px rgba(34, 60, 80, 0.43);
+	box-shadow: 2px 10px 8px -5px rgba(34, 60, 80, 0.43);
+
+	@media screen and (max-width: 550px) {
+		margin-top: 0;
+	}
 }
 
 .item {
-    min-width: 120px;
+	min-width: 155px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 12px;
+	padding: 20px;
 }

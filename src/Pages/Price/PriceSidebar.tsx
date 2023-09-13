@@ -15,7 +15,7 @@ const PriceSidebar = () => {
 
 	const handleSelect = (item: {}) => {
 		setSelectedItem(item);
-	}
+	};
 
 	const itemsList = useMemo(
 		() =>

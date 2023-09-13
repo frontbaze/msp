@@ -1,5 +1,5 @@
 .PriceProductItem {
-	background-color: rgb(221, 223, 225);
+	background-color: #5f718a;
 	margin-top: 20px;
 	border-radius: 5px;
 	min-height: 100px;
@@ -9,6 +9,7 @@
 	justify-content: end;
 	.title {
 		margin-bottom: 10px;
+		font-size: 20px;
 	}
 	.btns {
 		display: flex;

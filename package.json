@@ -28,6 +28,7 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-sticky-box": "^2.0.4",
     "react-textarea-autosize": "^8.4.0",
     "react-yandex-maps": "^4.6.0",
     "sass": "^1.56.1",
